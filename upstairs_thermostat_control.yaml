@@ -130,8 +130,9 @@ display:
     rotation: 0°
     update_interval: 100ms
     lambda: |-
-      it.printf(1, 1, id(font_bebas_74), id(color_white), "%.1f°", id(current_temp).state);
-      it.printf(15, 74, id(font_bebas_56), id(color_white), "%.1f%%", id(current_humidity).state);
+      it.print(1, 1, id(font_arial_12), id(color_teal_blue), "Upstairs");
+      it.printf(1, 21, id(font_bebas_74), id(color_white), "%.1f°", id(current_temp).state);
+      it.printf(15, 94, id(font_bebas_56), id(color_white), "%.1f%%", id(current_humidity).state);
       
       if(id(heat_status).has_state()) {
         if (id(heat_status).state) {
@@ -140,4 +141,4 @@ display:
           it.printf(42, 160, id(font_bebas_48), id(color_teal_blue), "%.0f°", id(target_temp).state);
         }
       }
-      it.printf(4, 228, id(font_arial_12), id(color_teal_blue), "%.2f%%", id(batterylevel).state);
+      it.printf(4, 228, id(font_arial_12), id(color_teal_blue), "%.2f%% (%.2fV)", id(batterylevel).state, id(vcc).state);
